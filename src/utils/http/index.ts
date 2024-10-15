@@ -7,13 +7,16 @@ function createRequester(options: RequestOptions = {}) {
 }
 
 export const httpRequester = createRequester({
-  validateCustomStatus: (response: { request: { responseType: string; }; data: { type: string; code: number; }; }) => {
+  validateCustomStatus: (response: {
+    request: { responseType: string };
+    data: { type: string; code: number };
+  }) => {
     if (response.request.responseType === 'blob') {
       return response.data instanceof Blob && response.data.type !== 'application/json';
     }
     return response.data?.code === 200 || false;
   },
-  handleCustomError: function (response: { data: any; }, { showErrorTip }: any) {
+  handleCustomError: function (response: { data: any }, { showErrorTip }: any) {
     const data = response.data;
     if (showErrorTip) {
       if (data && data.msg) {

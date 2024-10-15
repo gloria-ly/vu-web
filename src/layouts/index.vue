@@ -1,3 +1,3 @@
 <template>
-    <div>layout加载。。。。。</div>
+  <div>layout加载。。。。。</div>
 </template>
