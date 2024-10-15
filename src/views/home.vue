@@ -13,6 +13,9 @@ commonStore.setUserInfo('修改userInfo');
   <h1>{{ commonStore.userInfo + $t('menu.userManage') }}</h1>
   <a-button type="primary">1231231</a-button>
   <a-date-picker />
+  <a-form>
+    <a-form-item> <a-input></a-input> </a-form-item>
+  </a-form>
 </template>
 
 <style scoped></style>

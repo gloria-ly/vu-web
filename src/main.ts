@@ -11,7 +11,7 @@ import 'dayjs';
 function bootstrap() {
   const app = createApp(App);
   setupStore(app);
-  registerGlobComp(app);
+  // registerGlobComp(app);
   app.use(router);
   app.use(i18n);
   app.mount('#app');

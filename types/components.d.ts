@@ -10,6 +10,9 @@ declare module 'vue' {
     AButton: typeof import('ant-design-vue/lib')['Button']
     AConfigProvider: typeof import('ant-design-vue/lib')['ConfigProvider']
     ADatePicker: typeof import('ant-design-vue/lib')['DatePicker']
+    AForm: typeof import('ant-design-vue/lib')['Form']
+    AFormItem: typeof import('ant-design-vue/lib')['FormItem']
+    AInput: typeof import('ant-design-vue/lib')['Input']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
