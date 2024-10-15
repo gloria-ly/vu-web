@@ -43,7 +43,6 @@ import {
   Space
 } from 'ant-design-vue/es';
 
-
 export function registerGlobComp(app: App) {
   // antd components register
   app.component(ConfigProvider.name!, ConfigProvider);

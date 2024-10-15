@@ -5,27 +5,64 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:main": "cross-env npm run dev",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type:check": "vue-tsc",
+    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "lint:prettier": "prettier --write \"src/**/*.{js,json,ts,tsx,css,less,scss,vue,html,md}\" \"types/**/*.{d.ts,ts}\"",
+    "lint:eslint": "eslint --cache --fix \"src/**/*.{js,ts,tsx,vue}\" \"types/**/*.{d.ts,ts}\"",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "ant-design-vue": "^4.2.5",
     "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
     "pinia": "^2.2.4",
     "pinia-plugin-persistedstate": "^4.1.1",
+    "qs": "^6.13.0",
+    "unplugin-vue-components": "^0.27.4",
     "vue": "^3.5.10",
+    "vue-i18n": "^9.14.1",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@types/node": "^22.7.5",
+    "@types/qs": "^6.9.16",
+    "@typescript-eslint/eslint-plugin": "^8.9.0",
+    "@typescript-eslint/parser": "^8.9.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
     "cross-env": "^7.0.3",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.29.0",
+    "husky": "^8.0.0",
     "less": "^4.2.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3",
     "unplugin-auto-import": "^0.18.3",
     "vite": "^5.4.8",
     "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,ts,tsx,css,less,scss,vue,html,md}": "prettier --write",
+    "src/**/*.{js,ts,tsx,vue}": "eslint --cache --fix",
+    "types/**/*.{d.ts,ts}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   }
 }

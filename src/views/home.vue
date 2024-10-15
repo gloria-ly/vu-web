@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { CommonStore } from '@/store/modules/common'
-const commonStore = CommonStore()
+import { ref } from 'vue';
+import { CommonStore } from '@/store/modules/common';
+import { useI18n } from 'vue-i18n';
 
-commonStore.setUserInfo('修改userInfo')
+const { t } = useI18n();
+const commonStore = CommonStore();
+const sd = 111;
+commonStore.setUserInfo('修改userInfo');
 </script>
 
 <template>
-  <h1>{{ commonStore.userInfo }}</h1>
-
+  <h1>{{ commonStore.userInfo + $t('menu.userManage') }}</h1>
+  <a-button type="primary">1231231</a-button>
+  <a-date-picker />
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
+<style scoped></style>

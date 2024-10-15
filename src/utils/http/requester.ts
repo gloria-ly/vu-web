@@ -9,8 +9,7 @@ import type {
 
 import axios from 'axios';
 import { axiosRequestConfig } from './config';
-import { useUserStore } from '/@/store/modules/user';
-import { RequestMethodEnum, ContentTypeEnum } from '/@/enums/httpEnum';
+import { RequestMethodEnum, ContentTypeEnum } from '@/enums/httpEnum';
 import qs from 'qs';
 
 export class Requester {
@@ -34,8 +33,8 @@ export class Requester {
   private handleResponseError(response: any): void {
     const code = +response.data.code;
     if (code === 401) {
-      const userStore = useUserStore();
-      userStore.logout(false, true);
+      // const userStore = useUserStore();
+      // userStore.logout(false, true);
     }
 
     const requestOptions: Required<RequestOptions> = response.config.requestOptions;
@@ -57,13 +56,13 @@ export class Requester {
         const requestOptions = config.requestOptions;
 
         // handle token
-        const userStore = useUserStore();
-        const customToken = requestOptions.customToken;
-        if (requestOptions.auth && (userStore.isLogin || customToken)) {
-          config.headers[requestOptions.authHeader] = customToken
-            ? customToken
-            : 'Bearer ' + userStore.getToken;
-        }
+        // const userStore = useUserStore();
+        // const customToken = requestOptions.customToken;
+        // if (requestOptions.auth && (userStore.isLogin || customToken)) {
+        //   config.headers[requestOptions.authHeader] = customToken
+        //     ? customToken
+        //     : 'Bearer ' + userStore.getToken;
+        // }
 
         // handle ContentType
         const contentType = (config.headers['Content-Type'] = requestOptions.contentType);

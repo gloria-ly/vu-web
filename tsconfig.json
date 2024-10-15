@@ -1,9 +1,5 @@
 {
-   // "files": [],
-  // "references": [
-  //   { "path": "./tsconfig.app.json" },
-  //   { "path": "./tsconfig.node.json" }
-  // ],
+  // "files": [],
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -13,10 +9,10 @@
     "jsx": "preserve",
     // "jsxImportSource": "vue",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true, // 将每个文件设置为独立模块
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
+    "skipLibCheck": true, // 跳过第三方库检查
     "noEmit": true,
     "allowJs": true,
     // 用于设置解析非相对模块名称的基本目录，相对模块不会受到baseUrl的影响
@@ -26,7 +22,7 @@
       "@/*": ["src/*"],
       "#/*": ["types/*"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client"] // 添加要包含的类型声明文件名列表
   },
   "include": [
     "src/**/*.ts",
@@ -38,5 +34,7 @@
     "build/**/*.ts",
     "build/**/*.d.ts",
     "vite.config.ts"
-  ]
+  ],
+  "exclude": ["node_modules", "dist"],
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }
