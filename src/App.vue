@@ -6,7 +6,14 @@ const lang = zhCN;
 </script>
 
 <template>
-  <a-config-provider :locale="lang">
+  <a-config-provider
+    :locale="lang"
+    :theme="{
+      token: {
+        colorPrimary: '#e60000'
+      }
+    }"
+  >
     <router-view></router-view>
   </a-config-provider>
 </template>
