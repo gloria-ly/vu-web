@@ -6,11 +6,3 @@
     margin-top: 13px;
   }
 }
-
-.mobile-menu-dropdown {
-  width: 100%;
-  .ant-dropdown-menu {
-    border-radius: unset;
-    padding: 10px 142px;
-  }
-}

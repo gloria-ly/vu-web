@@ -8,6 +8,7 @@ export {};
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/lib')['Button']
+    ACol: typeof import('ant-design-vue/lib')['Col']
     AConfigProvider: typeof import('ant-design-vue/lib')['ConfigProvider']
     ADatePicker: typeof import('ant-design-vue/lib')['DatePicker']
     ADropdown: typeof import('ant-design-vue/lib')['Dropdown']
@@ -23,11 +24,13 @@ declare module 'vue' {
     AMenu: typeof import('ant-design-vue/lib')['Menu']
     AMenuDivider: typeof import('ant-design-vue/lib')['MenuDivider']
     AMenuItem: typeof import('ant-design-vue/lib')['MenuItem']
+    ARow: typeof import('ant-design-vue/lib')['Row']
     ASpace: typeof import('ant-design-vue/lib')['Space']
     ASubMenu: typeof import('ant-design-vue/lib')['SubMenu']
     ATypographyText: typeof import('ant-design-vue/lib')['TypographyText']
     ATypographyTitle: typeof import('ant-design-vue/lib')['TypographyTitle']
     CloseOutlined: typeof import('@ant-design/icons-vue')['CloseOutlined']
+    DoubleRightOutlined: typeof import('@ant-design/icons-vue')['DoubleRightOutlined']
     MenuOutlined: typeof import('@ant-design/icons-vue')['MenuOutlined']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

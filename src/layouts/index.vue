@@ -33,8 +33,11 @@ const contentStyle: CSSProperties = {
 };
 
 const footerStyle: CSSProperties = {
-  textAlign: 'center'
+  textAlign: 'center',
   // color: '#fff',
-  // backgroundColor: '#000000'
+  height: 'max-content',
+  backgroundColor: '#000000',
+  padding: 'unset',
+  color: '#fff'
 };
 </script>
