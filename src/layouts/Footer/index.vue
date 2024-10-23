@@ -68,120 +68,11 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { Grid } from 'ant-design-vue';
-
+import { footerList } from '@/utils/logics.ts';
 const useBreakpoint = Grid.useBreakpoint;
 const screens = useBreakpoint();
 const router = useRouter();
-const footerList = ref([
-  {
-    id: '1',
-    title: 'Contact Details',
-    list: [
-      {
-        id: '1',
-        type: 'email',
-        title: 'Customer Service',
-        content: 'customercare@vodafone.com.vu'
-      },
-      {
-        id: '2',
-        type: 'email',
-        title: 'Commercial Sales',
-        content: 'sales@vodafone.com.vu'
-      },
-      {
-        id: '3',
-        type: 'email',
-        title: 'Marketing Department',
-        content: 'marketing@vodafone.com.vu'
-      }
-    ]
-  },
-  {
-    id: '2',
-    title: 'For users',
-    list: [
-      {
-        id: '1',
-        title: 'Inbox',
-        type: 'fullUrl',
-        content: 'https://webmail.vanuatu.com.vu/surgeweb'
-      },
-      {
-        id: '2',
-        title: 'Speed Test',
-        type: 'internalTo',
-        content: 'speed-test'
-      },
-      {
-        id: '3',
-        title: 'Login',
-        type: 'fullUrl',
-        content: 'https://gptoweb.vodafone.com.vu/portal/secureShowCustomer.do'
-      },
-      {
-        id: '4',
-        title: 'My Account',
-        type: 'fullUrl',
-        content: 'https://gptoweb.vodafone.com.vu/portal/secureShowCustomer.do'
-      }
-    ]
-  },
-  {
-    id: '3',
-    title: 'Main menus',
-    list: [
-      {
-        id: '1',
-        title: 'Home',
-        type: 'internalTo',
-        content: '/'
-      },
-      {
-        id: '2',
-        title: 'About Us',
-        type: 'internalTo',
-        content: 'about'
-      },
-      {
-        id: '3',
-        title: 'Services',
-        type: 'internalTo',
-        content: 'services'
-      }
-    ]
-  },
-  {
-    id: '4',
-    title: 'Helping Menus',
-    list: [
-      {
-        id: '1',
-        title: 'Support',
-        type: 'internalTo',
-        content: 'business-bundle'
-      },
-      {
-        id: '2',
-        title: 'Faq',
-        type: 'internalTo',
-        content: 'faq'
-      },
-      {
-        id: '3',
-        title: 'Online Help',
-        type: 'internalTo',
-        content: 'services'
-      },
-      {
-        id: '4',
-        title: 'Contact Us',
-        type: 'internalTo',
-        content: 'contact'
-      }
-    ]
-  }
-]);
+
 const goToPage = (name: any) => {
   router.push({
     name
@@ -241,25 +132,12 @@ watch(screens, () => {
   }
 }
 @media only screen and (max-width: 1366px) {
-  .font-title-1 {
-    font-size: 20px;
-  }
-  .font-title-2 {
-    font-size: 16px;
-  }
-
   .bottom-3 {
     padding: 15px 30px;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .font-title-1 {
-    font-size: 16px;
-  }
-  .font-title-2 {
-    font-size: 14px;
-  }
   .bottom-2 {
     a {
       justify-content: center;

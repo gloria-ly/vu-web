@@ -8,6 +8,8 @@ export {};
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/lib')['Button']
+    ACard: typeof import('ant-design-vue/lib')['Card']
+    ACarousel: typeof import('ant-design-vue/lib')['Carousel']
     ACol: typeof import('ant-design-vue/lib')['Col']
     AConfigProvider: typeof import('ant-design-vue/lib')['ConfigProvider']
     ADatePicker: typeof import('ant-design-vue/lib')['DatePicker']

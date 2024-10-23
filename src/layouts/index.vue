@@ -27,8 +27,8 @@ const headerStyle: CSSProperties = {
 };
 
 const contentStyle: CSSProperties = {
-  minHeight: '280px',
-  padding: '24px'
+  minHeight: '280px'
+  // padding: '24px'
   // background: '#fff'
 };
 
