@@ -1,8 +1,10 @@
 <template>
-  <a-carousel :autoplay="autoplay" :dots="dots" :dotsClass="'slick-dots' + dotsClass">
-    <div v-for="item in list">
-      <img :class="'img-class' + imgClass" :src="item.url" />
-    </div>
+  <a-carousel :autoplay="autoplay" :dots="dots" :dotsClass="'slick-dots ' + dotsClass">
+    <slot>
+      <div v-for="item in list">
+        <img :class="'img-class ' + imgClass" :src="item.url" />
+      </div>
+    </slot>
   </a-carousel>
 </template>
 
@@ -35,6 +37,7 @@ const props = defineProps({
 <style lang="css" scoped>
 .img-class {
   width: 100%;
+  max-height: 400px;
 }
 :deep(.slick-dots li button) {
   height: 10px;
