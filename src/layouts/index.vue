@@ -23,7 +23,10 @@ const headerStyle: CSSProperties = {
   height: 'max-content',
   paddingInline: '0px',
   // lineHeight: '64px'
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  position: 'sticky',
+  top: 0,
+  zIndex: 100
 };
 
 const contentStyle: CSSProperties = {

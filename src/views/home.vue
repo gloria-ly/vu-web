@@ -131,6 +131,72 @@
     </a-row>
   </div>
   <img :src="middleImg4" width="100%" />
+  <div class="top-6">
+    <a-row class="content" align="center">
+      <a-col :span="24" class="font-title-4 m-3">
+        Our <span class="text-color-red">Best Deal</span>
+      </a-col>
+      <a-col :lg="20" :md="24" class="m-3">
+        <Swiper :list="top5List" :slidesPer="screens.lg ? 3 : screens.md ? 2 : 1"> </Swiper>
+      </a-col>
+    </a-row>
+  </div>
+  <Carousel :list="top6List" img-class="max-height" />
+  <div class="top-7">
+    <a-row align="center">
+      <a-col :lg="18" :md="22" :sm="22" :xs="20" class="m-3">
+        <a-row :gutter="[24, 24]">
+          <a-col v-for="item in top7List" :md="8" :sm="24">
+            <img :src="item.url" />
+            <div v-for="leaf in item.content" class="mt-1">
+              <a-typography-text v-if="leaf.type === 'title'" class="text-bold-500 font-title-1">{{
+                leaf.content
+              }}</a-typography-text>
+              <a-typography-text v-if="leaf.type === 'content'" class="font-title-3">{{
+                leaf.content
+              }}</a-typography-text>
+            </div>
+          </a-col>
+        </a-row>
+      </a-col>
+    </a-row>
+  </div>
+  <hr />
+  <div class="top-8">
+    <a-row class="content" align="center">
+      <a-col :span="24" class="font-title-4 m-3"
+        >How <span class="text-color-red">Can We Help?</span></a-col
+      >
+      <a-col :lg="20" :md="24">
+        <a-row :gutter="[24, 24]" justify="center">
+          <a-col :md="10" :sm="20" :xs="20">
+            <div class="back p-3 text-align-left">
+              <div>
+                <img :src="bottomImg7" style="max-width: 80px" />
+                <a-typography-text class="font-title-5">BECOME OUR CUSTOMER</a-typography-text>
+              </div>
+              <a-input-search enter-button="CALL ME" />
+              <div>
+                <a-typography-text class="font-title-3"
+                  >By clicking "Call me" you agree to be contacted by the merchant
+                  offer.</a-typography-text
+                >
+              </div>
+            </div>
+          </a-col>
+          <a-col :md="5" :sm="20" :xs="20">
+            <div class="back p-3">
+              <img :src="bottomImg8" />
+              <div><a-typography-text class="font-title-5">Visit Our Store</a-typography-text></div>
+              <div>
+                <a-typography-text class="font-title-3">Find nearest store</a-typography-text>
+              </div>
+            </div>
+          </a-col>
+        </a-row>
+      </a-col>
+    </a-row>
+  </div>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -139,6 +205,7 @@ import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { Grid } from 'ant-design-vue';
 import Carousel from '@/components/Carousel/index.vue';
+import Swiper from '@/components/Swiper/index.vue';
 import headerImg from '@/assets/image/slider-94.jpg';
 import headerImg1 from '@/assets/image/slider-95.jpg';
 import headerImg2 from '@/assets/image/slider-96.png';
@@ -159,6 +226,17 @@ import serviceImg6 from '@/assets/image/service-8.png';
 import serviceImg7 from '@/assets/image/service-9.png';
 import serviceImg8 from '@/assets/image/service-10.png';
 import serviceImg9 from '@/assets/image/service-11.png';
+import dealImg1 from '@/assets/image/docs-86.png';
+import dealImg2 from '@/assets/image/docs-87.png';
+import dealImg3 from '@/assets/image/docs-88.png';
+import bottomImg1 from '@/assets/image/docs-54.jpg';
+import bottomImg2 from '@/assets/image/docs-55.jpg';
+import bottomImg3 from '@/assets/image/docs-91.jpg';
+import bottomImg4 from '@/assets/image/docs-48.png';
+import bottomImg5 from '@/assets/image/docs-49.png';
+import bottomImg6 from '@/assets/image/docs-50.png';
+import bottomImg7 from '@/assets/image/phone_color-eeeeee.gif';
+import bottomImg8 from '@/assets/image/location.png';
 const useBreakpoint = Grid.useBreakpoint;
 const screens = useBreakpoint();
 const { t } = useI18n();
@@ -352,6 +430,129 @@ const top4List = [
     url: serviceImg9,
     title: 'Instructions and settings',
     name: 'rates'
+  }
+];
+
+const top5List = [
+  {
+    key: '1',
+    url: dealImg1,
+    content: [
+      { type: 'sub', content: 'Best Deal On' },
+      { type: 'title', content: 'DEVICES' },
+      { type: 'name', content: 'Samsung Galaxy J2Core' },
+      { type: 'button', content: 'VIEW MORE' }
+    ],
+    name: 'handsets'
+  },
+  {
+    key: '2',
+    url: dealImg2,
+    content: [
+      { type: 'sub', content: 'Best Deal On' },
+      { type: 'title', content: 'Tablets' },
+      { type: 'name', content: 'Samsung Galaxy TabA' },
+      { type: 'button', content: 'VIEW MORE' }
+    ],
+    name: 'tablets'
+  },
+  {
+    key: '3',
+    url: dealImg3,
+    content: [
+      { type: 'sub', content: 'Best Deal On' },
+      { type: 'title', content: 'Accessories' },
+      { type: 'name', content: 'Power Bank' },
+      { type: 'button', content: 'VIEW MORE' }
+    ],
+    name: 'accessories'
+  },
+  {
+    key: '4',
+    url: dealImg1,
+    content: [
+      { type: 'sub', content: 'Best Deal On' },
+      { type: 'title', content: 'DEVICES' },
+      { type: 'name', content: 'Samsung Galaxy J2Core' },
+      { type: 'button', content: 'VIEW MORE' }
+    ],
+    name: 'handsets'
+  },
+  {
+    key: '5',
+    url: dealImg2,
+    content: [
+      { type: 'sub', content: 'Best Deal On' },
+      { type: 'title', content: 'Tablets' },
+      { type: 'name', content: 'Samsung Galaxy TabA' },
+      { type: 'button', content: 'VIEW MORE' }
+    ],
+    name: 'tablets'
+  },
+  {
+    key: '6',
+    url: dealImg3,
+    content: [
+      { type: 'sub', content: 'Best Deal On' },
+      { type: 'title', content: 'Accessories' },
+      { type: 'name', content: 'Power Bank' },
+      { type: 'button', content: 'VIEW MORE' }
+    ],
+    name: 'accessories'
+  }
+];
+
+const top6List = [
+  {
+    key: '1',
+    url: bottomImg1
+  },
+  {
+    key: '2',
+    url: bottomImg2
+  },
+  {
+    key: '3',
+    url: bottomImg3
+  }
+];
+
+const top7List = [
+  {
+    key: '1',
+    url: bottomImg4,
+    content: [
+      { type: 'title', content: 'M-VATU' },
+      {
+        type: 'content',
+        content:
+          'Vodafone Mobile Money Transfer Service. Send & Withdraw Cash, Buy Credit, Bill Payment on the go. Easy & convenient.'
+      }
+    ]
+  },
+  {
+    key: '2',
+    url: bottomImg5,
+    content: [
+      { type: 'title', content: 'COMMUNITY ENGAGEMENT' },
+      {
+        type: 'content',
+        content:
+          'We are committed to the communities in Vanuatu. Addressing Sports, Music, Youth engagement, health to build stronger and healthier communities.'
+      }
+    ]
+  },
+  {
+    key: '3',
+    url: bottomImg6,
+    content: [
+      { type: 'title', content: 'OUR VALUES' },
+      {
+        type: 'content',
+        content:
+          'Our core values rest on Innovation, Customer Excellence, Creativity, Professionalism, Quality of service and lead the market by being highly competitive.'
+      }
+    ]
   }
 ];
 
@@ -568,6 +769,48 @@ const goToPage = (name: any) => {
         background-color: #e60000;
       }
     }
+  }
+}
+.top-6 {
+  position: relative;
+  z-index: 0;
+  background: #fff;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    top: 40%;
+    padding-top: 2%;
+    background-color: rgba(1, 35, 50, 0.075);
+    box-shadow: 0 0 150px rgba(50, 65, 70, 1);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 56%;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+  .content {
+    position: relative;
+    z-index: 3;
+  }
+}
+hr {
+  max-width: 1440px;
+}
+.top-8 {
+  margin-bottom: 3rem;
+  .back {
+    background: #eeeeee;
+    vertical-align: top;
+    border-radius: 5px;
   }
 }
 @media only screen and (max-width: 991px) {

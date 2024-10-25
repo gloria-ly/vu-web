@@ -19,6 +19,7 @@ declare module 'vue' {
     AFormItem: typeof import('ant-design-vue/lib')['FormItem']
     AImage: typeof import('ant-design-vue/lib')['Image']
     AInput: typeof import('ant-design-vue/lib')['Input']
+    AInputSearch: typeof import('ant-design-vue/lib')['InputSearch']
     ALayout: typeof import('ant-design-vue/lib')['Layout']
     ALayoutContent: typeof import('ant-design-vue/lib')['LayoutContent']
     ALayoutFooter: typeof import('ant-design-vue/lib')['LayoutFooter']
@@ -33,7 +34,9 @@ declare module 'vue' {
     ATypographyTitle: typeof import('ant-design-vue/lib')['TypographyTitle']
     CloseOutlined: typeof import('@ant-design/icons-vue')['CloseOutlined']
     DoubleRightOutlined: typeof import('@ant-design/icons-vue')['DoubleRightOutlined']
+    LeftCircleOutlined: typeof import('@ant-design/icons-vue')['LeftCircleOutlined']
     MenuOutlined: typeof import('@ant-design/icons-vue')['MenuOutlined']
+    RightCircleOutlined: typeof import('@ant-design/icons-vue')['RightCircleOutlined']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

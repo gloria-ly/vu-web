@@ -37,7 +37,7 @@ const props = defineProps({
 <style lang="css" scoped>
 .img-class {
   width: 100%;
-  max-height: 400px;
+  max-height: 580px;
 }
 :deep(.slick-dots li button) {
   height: 10px;
