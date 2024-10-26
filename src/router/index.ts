@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '主页'
         },
-        component: asyncViewImport('home.vue')
+        component: asyncViewImport('home/index.vue')
       }
     ]
   }
