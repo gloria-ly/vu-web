@@ -8,7 +8,7 @@ export const menu = [
   {
     key: '2',
     title: 'personal',
-    // name: 'personal',
+    name: 'personal',
     menu: [
       {
         key: '2-1',

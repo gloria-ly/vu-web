@@ -16,9 +16,41 @@ const routes: Array<RouteRecordRaw> = [
         path: '/home',
         name: 'home',
         meta: {
-          title: '主页'
+          title: 'home'
         },
         component: asyncViewImport('home/index.vue')
+      },
+      {
+        path: '/personal',
+        name: 'personal',
+        meta: {
+          title: 'personal'
+        },
+        component: asyncViewImport('personal/index.vue')
+      },
+      {
+        path: '/business',
+        name: 'business',
+        meta: {
+          title: 'business'
+        },
+        component: asyncViewImport('business/index.vue')
+      },
+      {
+        path: '/about-vodafone',
+        name: 'about-vodafone',
+        meta: {
+          title: 'about-vodafone'
+        },
+        component: asyncViewImport('about-vodafone/index.vue')
+      },
+      {
+        path: '/careers',
+        name: 'careers',
+        meta: {
+          title: 'careers'
+        },
+        component: asyncViewImport('careers/index.vue')
       }
     ]
   }
