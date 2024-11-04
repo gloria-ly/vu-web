@@ -9,7 +9,7 @@
   <a-row class="top-2" :gutter="[10, 24]">
     <a-col
       v-for="item in top1List"
-      :key="item.id"
+      :key="item.key"
       :md="12"
       :sm="12"
       :xs="24"
@@ -241,6 +241,7 @@ const useBreakpoint = Grid.useBreakpoint;
 const screens = useBreakpoint();
 const { t } = useI18n();
 const router = useRouter();
+const route = useRoute();
 // const commonStore = CommonStore();
 // const sd = 111;
 // commonStore.setUserInfo('修改userInfo');
@@ -555,6 +556,10 @@ const top7List = [
     ]
   }
 ];
+
+onMounted(() => {
+  console.log(route, route.meta, route.meta.img);
+});
 
 const goToPage = (name: any) => {
   router.push({

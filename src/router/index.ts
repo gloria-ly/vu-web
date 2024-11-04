@@ -2,7 +2,7 @@ import type { App } from 'vue';
 import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import { asyncLayoutImport, asyncViewImport } from '@/router/helper/asyncComponentImport';
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
@@ -16,7 +16,8 @@ const routes: Array<RouteRecordRaw> = [
         path: '/home',
         name: 'home',
         meta: {
-          title: 'home'
+          title: 'home',
+          img: '/src/assets/image/slider-94.jpg'
         },
         component: asyncViewImport('home/index.vue')
       },
@@ -26,7 +27,18 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: 'personal'
         },
-        component: asyncViewImport('personal/index.vue')
+        component: asyncLayoutImport('DetailLayout/index.vue'),
+        children: [
+          {
+            path: '/personal/prepaid-roaming',
+            name: 'prepaid-roaming',
+            meta: {
+              title: 'prepaid-roaming',
+              img: '/src/assets/image/slider-94.jpg'
+            },
+            component: asyncViewImport('personal/prepaidRoaming/index.vue')
+          }
+        ]
       },
       {
         path: '/business',

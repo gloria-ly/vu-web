@@ -1,4 +1,4 @@
-<template>123</template>
+<template>mobilePrepaid</template>
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';

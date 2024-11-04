@@ -39,6 +39,7 @@
                   v-if="itemMenu.child && itemMenu.child.length > 0"
                   v-for="leaf in itemMenu.child"
                   class="cursor-pointer"
+                  @click="goToPage(leaf.name)"
                 >
                   {{ leaf.title.toUpperCase() }}
                 </a-typography-text>
@@ -109,6 +110,7 @@ const baseStyle: CSSProperties = {
 };
 
 const goToPage = (name: any) => {
+  console.log(name, '==============>gotopage');
   router.push({
     name
     // query: {
