@@ -1,6 +1,19 @@
 <template>
   <a-space direction="vertical" :style="{ width: '100%' }" :size="[0, 48]">
-    detaillayoutPage
+    <div style="position: relative">
+      <img :src="route.meta.img" style="width: 100%" />
+      <a-flex gap="middle" vertical class="breadcrumb-position">
+        <a-typography-text class="font-title-5 breadcrumb">{{
+          breadcrumbData[breadcrumbData.length - 1]
+        }}</a-typography-text>
+        <a-breadcrumb>
+          <a-breadcrumb-item v-for="item in breadcrumbData" :onclick="goToPage(item)">
+            <a-typography-text class="font-title-1 breadcrumb">{{ item }}</a-typography-text>
+          </a-breadcrumb-item>
+        </a-breadcrumb>
+      </a-flex>
+    </div>
+
     <router-view v-slot="{ Component, route }">
       <component :is="Component" :key="route" />
     </router-view>
@@ -9,30 +22,39 @@
 
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
-const headerStyle: CSSProperties = {
-  textAlign: 'center',
-  // color: '#fff',
-  height: 'max-content',
-  paddingInline: '0px',
-  // lineHeight: '64px'
-  backgroundColor: '#fff',
-  position: 'sticky',
-  top: 0,
-  zIndex: 100
-};
 
-const contentStyle: CSSProperties = {
-  minHeight: '280px'
-  // padding: '24px'
-  // background: '#fff'
-};
+const route = useRoute();
+const router = useRouter();
+const breadcrumbData = route.path.split('/').filter((item) => item !== '');
+console.log(route, breadcrumbData, '==============>route');
 
-const footerStyle: CSSProperties = {
-  textAlign: 'center',
-  // color: '#fff',
-  height: 'max-content',
-  backgroundColor: '#000000',
-  padding: 'unset',
-  color: '#fff'
+const goToPage = (name: any) => {
+  router.push({
+    name
+    // query: {
+    //   keyword: 'Vue'
+    // }
+  });
 };
 </script>
+
+<style lang="css" scoped>
+:deep(.ant-breadcrumb .ant-breadcrumb-separator) {
+  color: #fff;
+}
+.breadcrumb-position {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.breadcrumb {
+  cursor: pointer;
+  color: #fff;
+  &:hover {
+    color: #e60000;
+  }
+}
+</style>

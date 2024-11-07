@@ -7,6 +7,9 @@ export {};
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ABreadcrumb: typeof import('ant-design-vue/lib')['Breadcrumb']
+    ABreadcrumbItem: typeof import('ant-design-vue/lib')['BreadcrumbItem']
+    ABreadcrumbSeparator: typeof import('ant-design-vue/lib')['BreadcrumbSeparator']
     ACard: typeof import('ant-design-vue/lib')['Card']
     ACarousel: typeof import('ant-design-vue/lib')['Carousel']
     ACol: typeof import('ant-design-vue/lib')['Col']
