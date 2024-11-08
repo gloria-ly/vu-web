@@ -33,8 +33,8 @@ export const routes: Array<RouteRecordRaw> = [
             path: '/personal/prepaid-roaming',
             name: 'prepaid-roaming',
             meta: {
-              title: 'prepaid-roaming',
-              img: '/src/assets/image/slider-94.jpg'
+              title: 'prepaid-roaming'
+              // img: '/src/assets/image/slider-94.jpg'
             },
             component: asyncViewImport('personal/prepaidRoaming/index.vue')
           }
