@@ -1,6 +1,12 @@
 <template>
   <a-row>
-    <a-col :md="{ span: 10, offset: 7 }" :sm="10" :xs="20"><CardOne /> </a-col>
+    <a-col
+      :md="{ span: 10, offset: 7 }"
+      :sm="{ span: 16, offset: 4 }"
+      :xs="{ span: 20, offset: 2 }"
+    >
+      <CardOne />
+    </a-col>
   </a-row>
 </template>
 <script setup lang="ts">

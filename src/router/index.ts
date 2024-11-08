@@ -6,6 +6,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
+    redirect: '/home',
     meta: {
       title: 'Home',
       public: false
