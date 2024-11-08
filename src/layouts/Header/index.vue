@@ -9,7 +9,9 @@
         @click="handleClick"
       >
         <a-menu-item v-for="item in menu" :key="item.key" :name="item.name">
-          <a-typography-text class="font-title-1">{{ item.title.toUpperCase() }}</a-typography-text>
+          <a-typography-text class="font-title-22">{{
+            item.title.toUpperCase()
+          }}</a-typography-text>
         </a-menu-item>
       </a-menu>
     </a-flex>
@@ -22,9 +24,11 @@
         :style="{ ...baseStyle }"
       >
         <a-dropdown overlayClassName="menu-dropdown">
-          <a-typography-text @click.prevent class="cursor-pointer font-title-2">{{
-            item.name.toUpperCase()
-          }}</a-typography-text>
+          <a-typography-text
+            @click="!item.child && goToPage(item.name)"
+            class="cursor-pointer font-title-18"
+            >{{ item.name.toUpperCase() }}</a-typography-text
+          >
           <template #overlay>
             <a-flex gap="large" justify="flex-start">
               <a-flex

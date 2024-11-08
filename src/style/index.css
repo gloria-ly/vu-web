@@ -34,44 +34,45 @@
   padding: 3rem;
 }
 
-.font-title-4 {
-  font-size: 40px;
-  line-height: 50px;
+.font-title-14 {
+  font-size: 14px;
+  line-height: 14px;
 }
 
-.font-title-5 {
-  font-size: 30px;
-  line-height: 40px;
+.font-title-18 {
+  font-size: 18px;
+  line-height: 20px;
 }
 
-.font-title-1 {
+.font-title-22 {
   font-size: 22px;
   line-height: 22px;
 }
 
-.font-title-2 {
-  font-size: 18px;
-  line-height: 18px;
+.font-title-30 {
+  font-size: 30px;
+  line-height: 40px;
 }
 
-.font-title-3 {
-  font-size: 14px;
-  line-height: 14px;
+.font-title-40 {
+  font-size: 40px;
+  line-height: 50px;
 }
+
 @media only screen and (max-width: 1366px) {
-  .font-title-1 {
+  .font-title-22 {
     font-size: 20px;
     line-height: 20px;
   }
-  .font-title-2 {
+  .font-title-18 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 20px;
   }
-  .font-title-4 {
+  .font-title-40 {
     font-size: 35px;
     line-height: 45px;
   }
-  .font-title-5 {
+  .font-title-30 {
     font-size: 26px;
     line-height: 36px;
   }
@@ -102,19 +103,19 @@
 }
 
 @media only screen and (max-width: 576px) {
-  .font-title-1 {
+  .font-title-22 {
     font-size: 16px;
     line-height: 16px;
   }
-  .font-title-2 {
+  .font-title-18 {
     font-size: 14px;
-    line-height: 14px;
+    line-height: 20px;
   }
-  .font-title-4 {
+  .font-title-40 {
     font-size: 30px;
     line-height: 40px;
   }
-  .font-title-5 {
+  .font-title-30 {
     font-size: 22px;
     line-height: 32px;
   }

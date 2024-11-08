@@ -9,19 +9,19 @@
       :lg="24 / footerList.length"
       :class="screens.sm ? 'text-align-left' : 'text-align-center'"
     >
-      <a-typography-text class="font-title-1 text-white-color">
+      <a-typography-text class="font-title-22 text-white-color">
         {{ item.title.toUpperCase() }}
       </a-typography-text>
       <a-row :gutter="[0, 12]">
         <a-col :span="24" v-for="childItem in item.list" :key="childItem.id">
           <div v-if="childItem.type === 'email'">
             <div>
-              <a-typography-text class="font-title-3 text-white-color">
+              <a-typography-text class="font-title-14 text-white-color">
                 {{ childItem.title }}
               </a-typography-text>
             </div>
             <div>
-              <a :href="'mailto:' + childItem.content" class="font-title-2 text-white-color">
+              <a :href="'mailto:' + childItem.content" class="font-title-18 text-white-color">
                 {{ childItem.content }}
               </a>
             </div>
@@ -29,7 +29,7 @@
 
           <div v-if="childItem.type === 'fullUrl'">
             <div>
-              <a :href="childItem.content" class="font-title-2 text-white-color">
+              <a :href="childItem.content" class="font-title-18 text-white-color">
                 <DoubleRightOutlined class="icon" />
                 {{ childItem.title }}
               </a>
@@ -37,7 +37,7 @@
           </div>
           <div v-if="childItem.type === 'internalTo'">
             <div @click="goToPage(childItem.content)">
-              <a class="font-title-2 text-white-color">
+              <a class="font-title-18 text-white-color">
                 <DoubleRightOutlined class="icon" />
                 {{ childItem.title }}
               </a>
@@ -49,10 +49,10 @@
   </a-row>
   <a-flex justify="center">
     <div class="bottom-3 cursor-pointer">
-      <a-typography-text class="font-title-1 text-white-color">
+      <a-typography-text class="font-title-22 text-white-color">
         CALLING FROM OVERSEAS
       </a-typography-text>
-      <a-typography-text class="font-title-2 text-white-color">TEL:+6787781111</a-typography-text>
+      <a-typography-text class="font-title-18 text-white-color">TEL:+6787781111</a-typography-text>
     </div>
   </a-flex>
 

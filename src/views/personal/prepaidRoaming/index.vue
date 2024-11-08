@@ -1,5 +1,5 @@
 <template>
-  <a-row>
+  <a-row style="margin-bottom: 60px">
     <a-col
       :md="{ span: 10, offset: 7 }"
       :sm="{ span: 16, offset: 4 }"

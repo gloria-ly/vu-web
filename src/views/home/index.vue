@@ -1,8 +1,8 @@
 <template>
   <Carousel :list="topList" />
   <a-flex class="top-1" justify="center" align="center">
-    <a-typography-text class="font-title-1 text-white-color"> Together We Can</a-typography-text>
-    <div class="button-1 font-title-3 cursor-pointer" @click="goToPage('promotions')">
+    <a-typography-text class="font-title-22 text-white-color"> Together We Can</a-typography-text>
+    <div class="button-1 font-title-14 cursor-pointer" @click="goToPage('promotions')">
       OUR OFFERS
     </div>
   </a-flex>
@@ -19,7 +19,7 @@
         <div class="icon-wrapper" @click="goToPage(item.name)">
           <img :src="item.url" />
         </div>
-        <a-typography-text class="font-title-1" @click="goToPage(item.name)">{{
+        <a-typography-text class="font-title-22" @click="goToPage(item.name)">{{
           item.title
         }}</a-typography-text>
       </a-flex>
@@ -39,24 +39,26 @@
           >
             <a-card hoverable style="height: 100%">
               <div class="title mt-2">
-                <a-typography-text class="font-title-1">{{ item.title }}</a-typography-text>
+                <a-typography-text class="font-title-22">{{ item.title }}</a-typography-text>
               </div>
-              <div class="price font-title-4">{{ item.price }}<sup>VT</sup></div>
+              <div class="price font-title-40">{{ item.price }}<sup>VT</sup></div>
               <div class="description">
                 <div v-for="leaf in item.description">
-                  <a-typography-text v-if="leaf" class="font-title-1">{{ leaf }}</a-typography-text>
+                  <a-typography-text v-if="leaf" class="font-title-22">{{
+                    leaf
+                  }}</a-typography-text>
                   <div v-else style="color: #fff">
                     {{ '-' }}
                   </div>
                 </div>
               </div>
-              <div class="button-2 font-title-3 cursor-pointer" @click="goToPage(item.name)">
+              <div class="button-2 font-title-14 cursor-pointer" @click="goToPage(item.name)">
                 GET STARTED
               </div>
             </a-card>
           </a-col>
         </a-row>
-        <div class="button-3 font-title-2 cursor-pointer mt-3" @click="goToPage('home-bundle')">
+        <div class="button-3 font-title-18 cursor-pointer mt-3" @click="goToPage('home-bundle')">
           browse more plans
         </div>
       </a-col>
@@ -70,24 +72,27 @@
             <template v-for="item in top3ContentList">
               <div class="show-content">
                 <div>
-                  <a-typography-text class="font-title-4 text-white-color">{{
+                  <a-typography-text class="font-title-40 text-white-color">{{
                     item.title
                   }}</a-typography-text>
                 </div>
                 <div v-for="leaf in item.content" class="typography">
                   <a-typography-text
-                    class="font-title-3 text-white-color mt-2"
+                    class="font-title-14 text-white-color mt-2"
                     v-if="leaf.type === 'sub'"
                     >{{ leaf.content }}
                   </a-typography-text>
                   <a-typography-text
-                    class="font-title-2 text-white-color mt-2"
+                    class="font-title-18 text-white-color mt-2"
                     v-if="leaf.type === 'normal'"
                   >
                     {{ leaf.content }}</a-typography-text
                   >
                 </div>
-                <div class="button-4 font-title-2 cursor-pointer mt-3" @click="goToPage(item.name)">
+                <div
+                  class="button-4 font-title-18 cursor-pointer mt-3"
+                  @click="goToPage(item.name)"
+                >
                   Read More
                 </div>
               </div>
@@ -104,7 +109,7 @@
   </div>
   <div class="top-5">
     <a-row class="content" align="center">
-      <a-col :span="24" class="font-title-4 m-3"
+      <a-col :span="24" class="font-title-40 m-3"
         >What <span class="text-color-red">can we help</span> you with?</a-col
       >
       <a-col :lg="20" :md="24">
@@ -122,7 +127,7 @@
             <a-card hoverable style="height: 100%">
               <img :src="item.url" />
               <div class="title mt-2">
-                <a-typography-text class="font-title-2">{{ item.title }}</a-typography-text>
+                <a-typography-text class="font-title-18">{{ item.title }}</a-typography-text>
               </div>
             </a-card>
           </a-col>
@@ -133,7 +138,7 @@
   <img :src="middleImg4" width="100%" />
   <div class="top-6">
     <a-row class="content" align="center">
-      <a-col :span="24" class="font-title-4 m-3">
+      <a-col :span="24" class="font-title-40 m-3">
         Our <span class="text-color-red">Best Deal</span>
       </a-col>
       <a-col :lg="20" :md="24" class="m-3">
@@ -149,10 +154,10 @@
           <a-col v-for="item in top7List" :md="8" :sm="24">
             <img :src="item.url" />
             <div v-for="leaf in item.content" class="mt-1">
-              <a-typography-text v-if="leaf.type === 'title'" class="text-bold-500 font-title-1">{{
+              <a-typography-text v-if="leaf.type === 'title'" class="text-bold-500 font-title-22">{{
                 leaf.content
               }}</a-typography-text>
-              <a-typography-text v-if="leaf.type === 'content'" class="font-title-3">{{
+              <a-typography-text v-if="leaf.type === 'content'" class="font-title-14">{{
                 leaf.content
               }}</a-typography-text>
             </div>
@@ -164,7 +169,7 @@
   <hr />
   <div class="top-8">
     <a-row class="content" align="center">
-      <a-col :span="24" class="font-title-4 m-3"
+      <a-col :span="24" class="font-title-40 m-3"
         >How <span class="text-color-red">Can We Help?</span></a-col
       >
       <a-col :lg="20" :md="24">
@@ -173,11 +178,11 @@
             <div class="back p-3 text-align-left">
               <div>
                 <img :src="bottomImg7" style="max-width: 80px" />
-                <a-typography-text class="font-title-5">BECOME OUR CUSTOMER</a-typography-text>
+                <a-typography-text class="font-title-30">BECOME OUR CUSTOMER</a-typography-text>
               </div>
               <a-input-search enter-button="CALL ME" />
               <div>
-                <a-typography-text class="font-title-3"
+                <a-typography-text class="font-title-14"
                   >By clicking "Call me" you agree to be contacted by the merchant
                   offer.</a-typography-text
                 >
@@ -187,9 +192,11 @@
           <a-col :md="5" :sm="20" :xs="20">
             <div class="back p-3">
               <img :src="bottomImg8" />
-              <div><a-typography-text class="font-title-5">Visit Our Store</a-typography-text></div>
               <div>
-                <a-typography-text class="font-title-3">Find nearest store</a-typography-text>
+                <a-typography-text class="font-title-30">Visit Our Store</a-typography-text>
+              </div>
+              <div>
+                <a-typography-text class="font-title-14">Find nearest store</a-typography-text>
               </div>
             </div>
           </a-col>

@@ -19,22 +19,22 @@
         <img :class="'img-class '" :src="item.url" />
         <a-flex vertical>
           <div v-for="leaf in item.content">
-            <div v-if="leaf.type === 'sub'" class="font-title-1 mt-1">
+            <div v-if="leaf.type === 'sub'" class="font-title-22 mt-1">
               {{ leaf.content }}
             </div>
             <div v-if="leaf.type === 'title'">
-              <a-typography-text class="text-bold font-title-5 mt-1">{{
+              <a-typography-text class="text-bold font-title-30 mt-1">{{
                 leaf.content
               }}</a-typography-text>
             </div>
             <div v-if="leaf.type === 'name'">
-              <a-typography-text v-if="leaf" class="font-title-1 text-bold-500 mt-1">{{
+              <a-typography-text v-if="leaf" class="font-title-22 text-bold-500 mt-1">{{
                 leaf.content
               }}</a-typography-text>
             </div>
             <div
               v-if="leaf.type === 'button'"
-              class="button-2 font-title-3 cursor-pointer mt-1"
+              class="button-2 font-title-14 cursor-pointer mt-1"
               @click="goToPage(item.name)"
             >
               {{ leaf.content }}

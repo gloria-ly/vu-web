@@ -3,12 +3,12 @@
     <div style="position: relative">
       <img :src="route.meta.img" style="width: 100%" />
       <a-flex gap="middle" vertical class="breadcrumb-position">
-        <a-typography-text class="font-title-5 breadcrumb">{{
+        <a-typography-text class="font-title-30 breadcrumb">{{
           breadcrumbData[breadcrumbData.length - 1]
         }}</a-typography-text>
         <a-breadcrumb>
           <a-breadcrumb-item v-for="item in breadcrumbData" :onclick="goToPage(item)">
-            <a-typography-text class="font-title-1 breadcrumb">{{ item }}</a-typography-text>
+            <a-typography-text class="font-title-22 breadcrumb">{{ item }}</a-typography-text>
           </a-breadcrumb-item>
         </a-breadcrumb>
       </a-flex>

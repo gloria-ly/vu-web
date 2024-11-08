@@ -28,14 +28,15 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: 'personal'
         },
+        redirect: '/personal/prepaid-roaming',
         component: asyncLayoutImport('DetailLayout/index.vue'),
         children: [
           {
             path: '/personal/prepaid-roaming',
             name: 'prepaid-roaming',
             meta: {
-              title: 'prepaid-roaming'
-              // img: '/src/assets/image/slider-94.jpg'
+              title: 'prepaid-roaming',
+              img: '/src/assets/image/personal/prepaid-roaming.jpg'
             },
             component: asyncViewImport('personal/prepaidRoaming/index.vue')
           }
@@ -47,7 +48,19 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: 'business'
         },
-        component: asyncViewImport('business/index.vue')
+        redirect: '/business/business-lte-plans',
+        component: asyncLayoutImport('DetailLayout/index.vue'),
+        children: [
+          {
+            path: '/business/business-lte-plans',
+            name: 'business-lte-plans',
+            meta: {
+              title: 'business-lte-plans',
+              img: '/src/assets/image/business/business-lte-plans.jpg'
+            },
+            component: asyncViewImport('business/businessLtePlans/index.vue')
+          }
+        ]
       },
       {
         path: '/about-vodafone',
@@ -55,7 +68,19 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: 'about-vodafone'
         },
-        component: asyncViewImport('about-vodafone/index.vue')
+        redirect: '/about-vodafone/community-services',
+        component: asyncLayoutImport('DetailLayout/index.vue'),
+        children: [
+          {
+            path: '/about-vodafone/community-services',
+            name: 'community-services',
+            meta: {
+              title: 'community-services',
+              img: '/src/assets/image/about/community-services.jpg'
+            },
+            component: asyncViewImport('about-vodafone/communityServices/index.vue')
+          }
+        ]
       },
       {
         path: '/careers',
