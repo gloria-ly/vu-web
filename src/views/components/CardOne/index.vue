@@ -6,15 +6,12 @@
     :title="title"
     class="card-one"
   >
-    <a-flex>
-      <!-- <a-flex v-for="(data, index) in content" :key="index">
-        <div>
-          {{ data.title }}
-        </div>
-        <div>
-          {{ data.content }}
-        </div>
-      </a-flex> -->
+    <a-flex vertical>
+      <a-flex vertical v-for="(data, index) in content" :key="index" class="item">
+        <a-typography-text class="font-title-1">{{ data.title }}</a-typography-text>
+        <a-typography-text class="font-title-2">{{ data.content }}</a-typography-text>
+      </a-flex>
+      <hr />
     </a-flex>
     <div class="button-2 font-title-3 cursor-pointer">{{ buttonText }}</div>
   </a-card>
@@ -60,13 +57,13 @@ const props = defineProps({
 .card-one {
   .ant-card-hoverable:hover {
     border-color: #e60000;
-    .price {
-      color: #e60000;
-    }
-    .button-2 {
-      background-color: #e60000;
-      color: #fff;
-    }
+  }
+  .item {
+    padding-bottom: 5px 0px;
+  }
+  .button-2 {
+    background-color: #e60000;
+    color: #fff;
   }
 }
 </style>
