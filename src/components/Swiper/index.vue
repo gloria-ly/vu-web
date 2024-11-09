@@ -10,8 +10,6 @@
       '--swiper-navigation-color': '#e60000'
     }"
     :modules="modules"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
     :navigation="true"
   >
     <slot>
@@ -54,6 +52,16 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 const router = useRouter();
+interface UserInfo {
+  url: string;
+  content: Array<ContentInfo>;
+  name: string;
+}
+interface ContentInfo {
+  type: string;
+  content?: string | [];
+  name?: string;
+}
 const props = defineProps({
   autoplay: {
     type: Boolean,
@@ -68,8 +76,14 @@ const props = defineProps({
     default: 3
   },
   list: {
-    type: Array,
-    default: () => []
+    type: Array<UserInfo>,
+    default: () => [
+      {
+        url: '',
+        content: '',
+        name: ''
+      }
+    ]
   },
   onSlideChange: {
     type: Function,
@@ -77,7 +91,7 @@ const props = defineProps({
   },
   onSwiper: {
     type: Function,
-    default: () => {}
+    default: function () {}
   },
   modules: {
     type: Array,

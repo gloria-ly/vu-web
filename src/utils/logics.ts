@@ -1,4 +1,18 @@
-export const menu = [
+interface MenuInfo {
+  key: string;
+  name: string;
+  title: string;
+  menu?: Array<ChildMenuInfo>;
+}
+
+interface ChildMenuInfo {
+  key: string;
+  name: string;
+  title: string;
+  child?: Array<ChildMenuInfo>;
+}
+
+export const menu: Array<MenuInfo> = [
   {
     key: '1',
     name: 'home',
@@ -252,7 +266,6 @@ export const menu = [
         key: '2-5',
         name: 'm-vatu',
         title: 'MVATU',
-        path: '',
         child: [
           {
             key: '2-5-1',

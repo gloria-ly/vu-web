@@ -20,8 +20,20 @@
       </a-row>
     </a-col>
   </a-row>
-  <DetailPage :align="'center'" :direction="'vertical'" :size="20" :content="title2" />
-  <DetailPage :align="'start'" :direction="'vertical'" :size="20" :content="content" />
+  <DetailPage
+    :align="'center'"
+    :direction="'vertical'"
+    :size="20"
+    :content="title2"
+    :width="'85%'"
+  />
+  <DetailPage
+    :align="'start'"
+    :direction="'vertical'"
+    :size="20"
+    :content="content"
+    :width="'85%'"
+  />
 </template>
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';

@@ -68,7 +68,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { Grid } from 'ant-design-vue';
-import { footerList } from '@/utils/logics.ts';
+import { footerList } from '@/utils/logics';
 const useBreakpoint = Grid.useBreakpoint;
 const screens = useBreakpoint();
 const router = useRouter();

@@ -1,53 +1,48 @@
 <template>
-  <div class="card-one">
-    <a-card
-      hoverable
-      style="height: 100%"
-      :headStyle="{ background: '#e60000', color: '#fff', ...headStyle }"
-      :title="title"
-    >
-      <a-flex vertical>
-        <a-flex vertical v-for="(data, index) in content" :key="index" class="item">
-          <a-typography-text class="font-title-18" type="secondary">{{
-            data.title
-          }}</a-typography-text>
-          <a-typography-text class="font-title-22">{{ data.content }}</a-typography-text>
-        </a-flex>
+  <div class="card-two">
+    <a-card hoverable :style="{ height: '100%', ...style }">
+      <a-flex vertical class="item">
+        <div>
+          <img :src="img" style="width: 100px; height: 99px" />
+        </div>
+        <a-typography-text class="font-title-22">{{ title }}</a-typography-text>
+        <a-typography-text class="font-title-18" type="secondary">{{ content }}</a-typography-text>
       </a-flex>
-      <div v-if="buttonText" class="button-2 font-title-14 cursor-pointer">{{ buttonText }}</div>
+      <!-- <div v-if="buttonText" class="button-2 font-title-14 cursor-pointer">{{ buttonText }}</div> -->
     </a-card>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-interface ContentInfo {
-  title: string;
-  content?: string | undefined;
-}
 const props = defineProps({
   title: {
     type: String,
-    default: ''
+    default: 'Retail & Customer Service'
   },
   content: {
-    type: Array<ContentInfo>,
+    type: String,
     required: false,
-    default: () => []
+    default: () =>
+      'Be our brand champions providing smart resolutions to guide customers to get the most out of their tech.'
   },
-  headStyle: {
+  style: {
     type: Object,
     default: () => {}
   },
-  buttonText: {
+  img: {
     type: String,
     default: ''
   }
+  // buttonText: {
+  //   type: String,
+  //   default: 'Info 081111 | Terms and Conditions apply'
+  // }
 });
 </script>
 
 <style lang="css" scoped>
-.card-one {
+.card-two {
   position: relative;
   .ant-card .ant-card-body {
     padding: 20px 0px 30px 0px;

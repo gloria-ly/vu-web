@@ -21,22 +21,22 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       extensions: ['.js', '.json', '.ts', '.vue'] // 使用路径别名时想要省略的后缀名，可以自己 增减
     },
     base: './', // 公共基础路径，设置打包路径
-    server: {
-      //开发服务器选项
-      port: 4000, // 设置服务启动端口号
-      open: true, // 设置服务启动时是否自动打开浏览器
-      cors: true, // 允许跨域
+    // server: {
+    //   //开发服务器选项
+    //   port: 4000, // 设置服务启动端口号
+    //   open: true, // 设置服务启动时是否自动打开浏览器
+    //   cors: true, // 允许跨域
 
-      //设置代理，根据我们项目实际情况配置
-      proxy: {
-        '/api': {
-          target: env.VITE_DEV_SERVER_PROXY,
-          changeOrigin: true, //是否允许不同源
-          secure: false, //支持https
-          rewrite: (path) => path.replace('/api/', '/')
-        }
-      }
-    },
+    //   //设置代理，根据我们项目实际情况配置
+    //   proxy: {
+    //     '/api': {
+    //       target: env.VITE_DEV_SERVER_PROXY,
+    //       changeOrigin: true, //是否允许不同源
+    //       secure: false, //支持https
+    //       rewrite: (path) => path.replace('/api/', '/')
+    //     }
+    //   }
+    // },
     build: {
       outDir: 'dist', //指定打包路径
       terserOptions: {
@@ -47,6 +47,6 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         }
       },
       chunkSizeWarningLimit: 1500 //chunk大小警告的限制（以kbs为单位）
-    },
+    }
   };
 };

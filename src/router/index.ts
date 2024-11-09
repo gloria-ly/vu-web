@@ -39,6 +39,15 @@ export const routes: Array<RouteRecordRaw> = [
               img: '/src/assets/image/personal/prepaid-roaming.jpg'
             },
             component: asyncViewImport('personal/prepaidRoaming/index.vue')
+          },
+          {
+            path: '/personal/rates',
+            name: 'rates',
+            meta: {
+              title: 'rates',
+              img: '/src/assets/image/personal/rates.jpg'
+            },
+            component: asyncViewImport('personal/rates/index.vue')
           }
         ]
       },
@@ -88,7 +97,18 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: 'careers'
         },
-        component: asyncViewImport('careers/index.vue')
+        component: asyncLayoutImport('DetailLayout/index.vue'),
+        children: [
+          {
+            path: '/careers',
+            name: 'careers',
+            meta: {
+              title: 'careers',
+              img: '/src/assets/image/careers/careers.jpg'
+            },
+            component: asyncViewImport('careers/index.vue')
+          }
+        ]
       }
     ]
   }

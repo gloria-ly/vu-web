@@ -1,12 +1,13 @@
 <template>
   <div class="text-list-one">
     <a-flex v-for="(item, index) in content.content">
-      <div class="number">
-        {{ index + 1 }}
-      </div>
-      <a-typography-text :class="'font-title-' + content.size">
-        {{ item }}
-      </a-typography-text>
+      <ul>
+        <li>
+          <a-typography-text :class="'font-title-' + content.size">
+            {{ item }}
+          </a-typography-text>
+        </li>
+      </ul>
     </a-flex>
   </div>
 </template>
@@ -22,7 +23,7 @@ const props = defineProps({
         'Visit a Vodafone shop and sign a 12 months contract',
         'Router is charged at 13,500vt'
       ],
-      type: 'text-list',
+      type: 'text-list3',
       size: 18
     }
   }
@@ -37,7 +38,6 @@ const props = defineProps({
     height: 20px;
     color: #fff;
     line-height: 20px;
-    margin: 5px;
     background-color: #e60000;
     margin-bottom: 5px;
   }

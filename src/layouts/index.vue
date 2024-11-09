@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import Header from './Header/index.vue';
 import Footer from './Footer/index.vue';
-import { menu } from '@/utils/logics.ts';
 
 import type { CSSProperties } from 'vue';
 const headerStyle: CSSProperties = {

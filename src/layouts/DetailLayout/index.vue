@@ -1,7 +1,7 @@
 <template>
   <a-space direction="vertical" :style="{ width: '100%' }" :size="[0, 48]">
     <div style="position: relative">
-      <img :src="route.meta.img" style="width: 100%" />
+      <img :src="img" style="width: 100%" />
       <a-flex gap="middle" vertical class="breadcrumb-position">
         <a-typography-text class="font-title-30 breadcrumb">{{
           breadcrumbData[breadcrumbData.length - 1]
@@ -26,6 +26,7 @@ import type { CSSProperties } from 'vue';
 const route = useRoute();
 const router = useRouter();
 const breadcrumbData = route.path.split('/').filter((item) => item !== '');
+const img = ref(route.meta.img as string);
 console.log(route, breadcrumbData, '==============>route');
 
 const goToPage = (name: any) => {

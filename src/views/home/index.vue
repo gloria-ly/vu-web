@@ -26,13 +26,13 @@
     </a-col>
   </a-row>
   <div class="top-3">
-    <a-row class="content" align="center">
+    <a-row class="content" justify="center">
       <a-col :lg="18" :md="24">
         <a-row :gutter="[0, 24]">
           <a-col
             class="item"
             v-for="item in top2List"
-            :key="item.id"
+            :key="item.key"
             :md="24 / top2List.length"
             :sm="24"
             :xs="24"
@@ -67,7 +67,7 @@
   <div class="top-4">
     <div class="content-carousel">
       <a-row class="content">
-        <a-col :lg="12" :md="24">
+        <a-col :lg="12" :md="24" :sm="24">
           <Carousel>
             <template v-for="item in top3ContentList">
               <div class="show-content">
@@ -102,13 +102,13 @@
       </a-row>
     </div>
     <a-row>
-      <a-col :lg="12" :md="24" :offset="screens.lg ? 12 : 0">
+      <a-col :lg="12" :md="24" :sm="24" :offset="screens.lg ? 12 : 0">
         <Carousel :list="top3List" :dots="false" img-class="max-height" />
       </a-col>
     </a-row>
   </div>
   <div class="top-5">
-    <a-row class="content" align="center">
+    <a-row class="content" justify="center">
       <a-col :span="24" class="font-title-40 m-3"
         >What <span class="text-color-red">can we help</span> you with?</a-col
       >
@@ -117,12 +117,12 @@
           <a-col
             class="item"
             v-for="item in top4List"
-            :key="item.id"
+            :key="item.key"
             :lg="4"
             :md="8"
             :sm="12"
             :xs="24"
-            @click="item.path ? (window.location.href = item.path) : goToPage(item.name)"
+            @click="item.path ? (route.path = item.path) : goToPage(item.name)"
           >
             <a-card hoverable style="height: 100%">
               <img :src="item.url" />
@@ -137,7 +137,7 @@
   </div>
   <img :src="middleImg4" width="100%" />
   <div class="top-6">
-    <a-row class="content" align="center">
+    <a-row class="content" justify="center">
       <a-col :span="24" class="font-title-40 m-3">
         Our <span class="text-color-red">Best Deal</span>
       </a-col>
@@ -148,7 +148,7 @@
   </div>
   <Carousel :list="top6List" img-class="max-height" />
   <div class="top-7">
-    <a-row align="center">
+    <a-row justify="center">
       <a-col :lg="18" :md="22" :sm="22" :xs="20" class="m-3">
         <a-row :gutter="[24, 24]">
           <a-col v-for="item in top7List" :md="8" :sm="24">
@@ -168,7 +168,7 @@
   </div>
   <hr />
   <div class="top-8">
-    <a-row class="content" align="center">
+    <a-row class="content" justify="center">
       <a-col :span="24" class="font-title-40 m-3"
         >How <span class="text-color-red">Can We Help?</span></a-col
       >

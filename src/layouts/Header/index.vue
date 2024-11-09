@@ -99,7 +99,7 @@ import type { CSSProperties } from 'vue';
 import fav from '@/assets/brand_logo_02.png';
 import { Grid, MenuProps } from 'ant-design-vue';
 import { useRouter } from 'vue-router';
-import { menu } from '@/utils/logics.ts';
+import { menu } from '@/utils/logics';
 const router = useRouter();
 
 const useBreakpoint = Grid.useBreakpoint;

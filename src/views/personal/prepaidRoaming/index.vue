@@ -5,7 +5,7 @@
       :sm="{ span: 16, offset: 4 }"
       :xs="{ span: 20, offset: 2 }"
     >
-      <CardOne />
+      <CardOne :content="content" :buttonText="buttonText" :title="title" />
     </a-col>
   </a-row>
 </template>
@@ -32,6 +32,8 @@ const content = reactive([
     content: '21vt/SMS'
   }
 ]);
+const buttonText = 'Info 081111 | Terms and Conditions apply';
+const title = 'Roaming via Optus Australia & Spark New Zealand at an affordable rate!';
 // const commonStore = CommonStore();
 // const sd = 111;
 // commonStore.setUserInfo('修改userInfo');
